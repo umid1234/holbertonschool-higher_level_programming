@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+import sys
+new_in_list = __import__('4-new_in_list').new_in_list
+my_list = [1, 2, 3, 4, 5]
+argv = sys.argv
+idx = int(argv[1])
+new_element = int(argv[2])
+new_list = new_in_list(my_list, idx, new_element)
+print(new_list)
+print(my_list)
