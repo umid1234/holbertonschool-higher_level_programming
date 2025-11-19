@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def max_integer(my_list=[]):
-    max_value = 0
+    max_value = -999
     if len(my_list) == 0:
         return None
     else:
