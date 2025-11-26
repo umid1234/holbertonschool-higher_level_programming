@@ -1,5 +1,11 @@
 #!/usr/bin/python3
+"""
+Module-1 rectangle about the usage of getters and setters method acompanied with representation dict work on the classes and their instances
+"""
 class Rectangle:
+    """
+    This is how real rectangle in python should be created
+    """
     @property
     def width(self):
         return self.__width
