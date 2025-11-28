@@ -43,10 +43,11 @@ class Square(Rectangle):
         with usage of parent class integer_validator"""
         super().integer_validator("size", size)
         super().__init__(size, size)
-    
+
     def area(self):
         return self._Rectangle__width * self._Rectangle__height
-    
+
     def __str__(self):
         """Return string representation of the square"""
-        return "[Square] {}/{}".format(self._Rectangle__width, self._Rectangle__height)  # Use name-mangled attributes
+        return "[Square] {}/{}".format(self._Rectangle__width, self._Rectangle__height)
+    
