@@ -8,6 +8,17 @@
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 [Exception] area() is not implemented
+>>> try:
+...     bg.integer_validator("age")  # Should fail (missing second argument)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] integer_validator() missing 1 required positional argument: 'value'
+
+>>> try:
+...     bg.integer_validator()  # Should fail (missing both arguments)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
 >>> try:
 ...     bg.integer_validator("age", 1)  # Should pass (valid integer)
