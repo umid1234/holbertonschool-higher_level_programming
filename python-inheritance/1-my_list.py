@@ -1,10 +1,14 @@
 #!/usr/bin/python3
+"""
+Docstring for MyList which will print the sorted list
+"""
+
+
 class MyList(list):
     """
-    Docstring for MyList which will print the sorted list
+    MyList class that inherits from list class
     """
+    
     def print_sorted(self):
-        """
-        Docstring for print_sorted 
-        """
+        """Docstring for print_sorted """
         print(sorted(self))
