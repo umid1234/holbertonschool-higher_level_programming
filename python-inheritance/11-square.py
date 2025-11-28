@@ -42,11 +42,11 @@ class Square(Rectangle):
         """function for initialization of Square
         with usage of parent class integer_validator"""
         super().integer_validator("size", size)
-        super().__init__(size, size)
+        self.__size = size
 
     def area(self):
         return self._Rectangle__width * self._Rectangle__height
 
     def __str__(self):
         """Return string representation of the square"""
-        return "[Square] {}/{}".format(self._Rectangle__width, self._Rectangle__height)
+        return "[Square] {}/{}".format(self.__size, self.__size)
