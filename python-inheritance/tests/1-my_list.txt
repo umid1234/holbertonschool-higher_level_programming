@@ -1,4 +1,6 @@
->>> from 1-my_list import MyList
+>>> import importlib
+>>> my_list_module = importlib.import_module('1-my_list')
+>>> MyList = my_list_module.MyList
 >>> my_list = MyList()
 >>> my_list.append(1)
 >>> my_list.append(4)
