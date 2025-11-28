@@ -42,6 +42,7 @@ class Square(Rectangle):
         """function for initialization of Square
         with usage of parent class integer_validator"""
         super().integer_validator("size", size)
+        super().__init__(size, size)
         self.__size = size
 
     def area(self):
