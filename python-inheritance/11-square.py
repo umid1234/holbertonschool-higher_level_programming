@@ -35,10 +35,6 @@ class Rectangle(BaseGeometry):
         """Return string representation of the rectangle"""
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
 
-    def get_dimensions(self):
-        """Return width and height as a tuple"""
-        return (self.__width, self.__height)
-
 
 class Square(Rectangle):
     """Class for Square that inherits from Rectangle"""
@@ -52,6 +48,5 @@ class Square(Rectangle):
         return self._Rectangle__width * self._Rectangle__height
 
     def __str__(self):
-        # Access the dimensions using the get_dimensions method
-        width, height = self.get_dimensions()
-        return "[Square] {}/{}".format(width, height)
+        """Return string representation of the square"""
+        return "[Square] {}/{}".format(self._Rectangle__width, self._Rectangle__height)
