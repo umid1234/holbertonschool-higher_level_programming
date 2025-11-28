@@ -3,60 +3,60 @@
 >>> BaseGeometry = base_geometry_module.BaseGeometry
 >>> bg = BaseGeometry()
 
->>> bg.integer_validator("age", 1)
+>>> bg.integer_validator("age", 1)  # Should pass
 
->>> bg.integer_validator("width", 100)
+>>> bg.integer_validator("age", 4)  # Should pass
 
 >>> try:
-...     bg.integer_validator("age", "John")
+...     bg.integer_validator("age", "4")  # Should fail (string input)
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 [TypeError] age must be an integer
 
 >>> try:
-...     bg.integer_validator("age", 0)
+...     bg.integer_validator("age", True)  # Should fail (boolean input)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] age must be an integer
+
+>>> try:
+...     bg.integer_validator("age", None)  # Should fail (None input)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] age must be an integer
+
+>>> try:
+...     bg.integer_validator("age", 0)  # Should fail (value must be > 0)
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 [ValueError] age must be greater than 0
 
 >>> try:
-...     bg.integer_validator("distance", -4)
+...     bg.integer_validator("age", -4)  # Should fail (value must be > 0)
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
-[ValueError] distance must be greater than 0
+[ValueError] age must be greater than 0
 
 >>> try:
-...     bg.integer_validator("height", 5.5)
+...     bg.integer_validator("age", [3])  # Should fail (list input)
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
-[TypeError] height must be an integer
+[TypeError] age must be an integer
 
 >>> try:
-...     bg.integer_validator("is_active", True)
+...     bg.integer_validator("age", (4,))  # Should fail (tuple input)
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
-[TypeError] is_active must be an integer
+[TypeError] age must be an integer
 
 >>> try:
-...     bg.integer_validator("weight", None)
+...     bg.integer_validator("age", {3, 4})  # Should fail (set input)
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
-[TypeError] weight must be an integer
+[TypeError] age must be an integer
 
 >>> try:
-...     bg.integer_validator("list_value", [1, 2, 3])
+...     bg.integer_validator("age", {3: 4})  # Should fail (dict input)
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
-[TypeError] list_value must be an integer
-
->>> try:
-...     bg.integer_validator("dict_value", {"key": "value"})
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-[TypeError] dict_value must be an integer
-
->>> try:
-...     bg.integer_validator("percentage", 5.0)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-[TypeError] percentage must be an integer
+[TypeError] age must be an integer
