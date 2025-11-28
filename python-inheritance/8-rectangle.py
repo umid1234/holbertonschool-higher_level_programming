@@ -17,6 +17,7 @@ class BaseGeometry:
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
 
+
 class Rectangle(BaseGeometry):
     """Class for Rectangle"""
     def __init__(self, width, height):
@@ -27,3 +28,6 @@ class Rectangle(BaseGeometry):
         self.__width = width
         self.__height = height
     
+    def __str__(self):
+        """Return string representation of the rectangle"""
+        return "[Rectangle] {}/{}".format(self.__width, self.__height)
