@@ -3,9 +3,16 @@
 >>> BaseGeometry = base_geometry_module.BaseGeometry
 >>> bg = BaseGeometry()
 
->>> bg.integer_validator("age", 1)  # Should pass
+>>> try:
+...     bg.area()  # Should fail (method is not implemented)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[Exception] area() is not implemented
 
->>> bg.integer_validator("age", 4)  # Should pass
+>>> try:
+...     bg.integer_validator("age", 1)  # Should pass (valid integer)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
 
 >>> try:
 ...     bg.integer_validator("age", "4")  # Should fail (string input)
