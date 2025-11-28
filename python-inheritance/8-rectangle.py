@@ -26,3 +26,15 @@ class Rectangle(BaseGeometry):
         super().integer_validator("height", height)
         self.__width = width
         self.__height = height
+    @property
+    def width(self):
+        """Getter for width"""
+        return self.__width
+
+    @property
+    def height(self):
+        """Getter for height"""
+        return self.__height
+
+    def __str__(self):
+        return "[Rectangle] {}/{}".format(self.__width, self.__height)
