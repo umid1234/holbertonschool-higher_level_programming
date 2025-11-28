@@ -5,4 +5,4 @@
 def write_file(filename="", text=""):
     """fucntion that writes"""
     with open(filename, "w") as file:
-        file.write(text)
+        return file.write(text)
