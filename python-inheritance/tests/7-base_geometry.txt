@@ -8,47 +8,55 @@
 >>> bg.integer_validator("width", 100)
 
 >>> try:
->>>     bg.integer_validator("age", "John")
->>> except Exception as e:
->>>     print("[{}] {}".format(e.__class__.__name__, e))
+...     bg.integer_validator("age", "John")
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] age must be an integer
 
 >>> try:
->>>     bg.integer_validator("age", 0)
->>> except Exception as e:
->>>     print("[{}] {}".format(e.__class__.__name__, e))
+...     bg.integer_validator("age", 0)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] age must be greater than 0
 
 >>> try:
->>>     bg.integer_validator("distance", -4)
->>> except Exception as e:
->>>     print("[{}] {}".format(e.__class__.__name__, e))
+...     bg.integer_validator("distance", -4)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
 [ValueError] distance must be greater than 0
 
 >>> try:
->>>     bg.integer_validator("height", 5.5)
->>> except Exception as e:
->>>     print("[{}] {}".format(e.__class__.__name__, e))
+...     bg.integer_validator("height", 5.5)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] height must be an integer
 
 >>> try:
->>>     bg.integer_validator("is_active", True)
->>> except Exception as e:
->>>     print("[{}] {}".format(e.__class__.__name__, e))
+...     bg.integer_validator("is_active", True)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] is_active must be an integer
 
 >>> try:
->>>     bg.integer_validator("weight", None)
->>> except Exception as e:
->>>     print("[{}] {}".format(e.__class__.__name__, e))
+...     bg.integer_validator("weight", None)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] weight must be an integer
 
 >>> try:
->>>     bg.integer_validator("list_value", [1, 2, 3])
->>> except Exception as e:
->>>     print("[{}] {}".format(e.__class__.__name__, e))
+...     bg.integer_validator("list_value", [1, 2, 3])
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] list_value must be an integer
 
 >>> try:
->>>     bg.integer_validator("dict_value", {"key": "value"})
->>> except Exception as e:
->>>     print("[{}] {}".format(e.__class__.__name__, e))
+...     bg.integer_validator("dict_value", {"key": "value"})
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] dict_value must be an integer
 
 >>> try:
->>>     bg.integer_validator("percentage", 5.0)
->>> except Exception as e:
->>>     print("[{}] {}".format(e.__class__.__name__, e))
+...     bg.integer_validator("percentage", 5.0)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] percentage must be an integer
