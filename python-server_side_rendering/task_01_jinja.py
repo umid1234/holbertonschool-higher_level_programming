@@ -1,31 +1,21 @@
-#!/usr/bin/python3
-"""
-Basic Flask application rendering HTML templates with reusable
-header and footer components.
-"""
-
 from flask import Flask, render_template
 
 app = Flask(__name__)
 
-
-@app.route("/")
+@app.route('/')
 def home():
-    """Render home page"""
-    return render_template("index.html")
+    """Renders the home page"""
+    return render_template('index.html')
 
-
-@app.route("/about")
+@app.route('/about')
 def about():
-    """Render About page"""
-    return render_template("about.html")
+    """Renders the about page"""
+    return render_template('about.html')
 
-
-@app.route("/contact")
+@app.route('/contact')
 def contact():
-    """Render Contact page"""
-    return render_template("contact.html")
+    """Renders the contact page"""
+    return render_template('contact.html')
 
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True, port=5000)
